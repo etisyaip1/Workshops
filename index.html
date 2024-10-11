@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Mortgage Calculator </title>
+<script src="calculator.js"> </script>
+</head>
+<body>
+<h2> Mortgage Calculator</h2>
+<label for="amountInK"> Loan Amount (in K)</label><br>
+<input type="number" id="amountInK" value="400"> </label><br>
+
+<label for="annualInterestRate"> Rate in whole % </label> <br>
+<input type="number" id="annualInterestRate" value="7"><br>
+
+<label for="numberOfYears"> Years</label><br>
+<input type="number" id="numberOfYears" value="30"> <br> 
+
+<button id="calcPayment"> Calculate Payment!</button><br>
+<br>
+Calculated Payment Amount: <br>
+$<input type="text" id="paymentAmount" value="???">
+</div>
+
+</body>
+<script>
+    function onClick(){
+        const principalLoanAmountinK = amountinK.value;
+        const yearlyInterestRate = annualInterestRate.value;
+        const termInYears = numberOfYear.value;
+        const p = calculateMonthlyPayment(prinicaplLoanAmountInK, yearlyInterestRate, termInYears);
+        paymentAmount.value = p.toFixed(2);
+}   
+    calcPayment.addEventListener("click",()=>{
+        paymentAmount.value = calculateMonthlyPayment(
+            Number(amountInK.value),
+            Number (annualInterestRate.value),
+            Number (numberOfYears.value)
+        ).toFixed(2);
+    });
+
+</script>
+</html>
